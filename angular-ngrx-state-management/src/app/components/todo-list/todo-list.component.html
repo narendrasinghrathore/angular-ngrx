@@ -1,0 +1,13 @@
+<h3>List</h3>
+<ng-container *ngIf="list$ | async as list; else noData">
+  <ul>
+    <ng-container *ngFor="let item of list">
+      <li>{{ item.name }}</li>
+    </ng-container>
+  </ul>
+</ng-container>
+<ng-template #noData>
+  <p>
+    No item in list
+  </p>
+</ng-template>

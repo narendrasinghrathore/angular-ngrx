@@ -7,7 +7,8 @@ import { StoreModule, } from '@ngrx/store';
 import { reducers, metaReducers } from './store/reducers';
 import { TodoListComponent } from './components/todo-list/todo-list.component';
 import { TodoComponent } from './container/todo/todo.component';
-
+import { HttpClientModule } from '@angular/common/http';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 @NgModule({
   declarations: [
     AppComponent,
@@ -17,6 +18,7 @@ import { TodoComponent } from './container/todo/todo.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     StoreModule.forRoot(reducers, {
       metaReducers,
       runtimeChecks: {
@@ -24,7 +26,7 @@ import { TodoComponent } from './container/todo/todo.component';
         strictActionImmutability: true
       }
     }),
-    StoreDevtooldModule
+    StoreDevtoolsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

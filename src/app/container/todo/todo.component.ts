@@ -6,6 +6,7 @@ import { Observable } from 'rxjs';
 import { ITodo, ITodoStatus } from 'src/app/models/todo.model';
 import { ChangeDetectionStrategy } from '@angular/core';
 import * as  TodoActions from '../../store/actions/todo.action';
+import { TodoService } from 'src/app/services/todo.service';
 
 @Component({
   selector: 'app-todo',
@@ -16,7 +17,8 @@ import * as  TodoActions from '../../store/actions/todo.action';
 export class TodoComponent implements OnInit {
   list: Observable<ITodo[]>;
 
-  constructor(private store: Store<AppState>) { }
+  constructor(private store: Store<AppState>) {
+  }
 
   ngOnInit() {
     this.list = this.store
